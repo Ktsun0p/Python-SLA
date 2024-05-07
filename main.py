@@ -1,4 +1,3 @@
-import json
 from methods.getSummonerByName import get_summoner_by_name
 
 class riot_api:
