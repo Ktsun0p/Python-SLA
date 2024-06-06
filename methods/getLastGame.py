@@ -34,7 +34,7 @@ def get_last_game(region_routing_value, puuid, api_key, lang = "en_US"):
     LANE_EMJ = {
         'TOP': "<:TOP:977294915841187922>",
         "JUNGLE":"<:JUNGLE:977294894169210891>",
-        "MIDDLE":"<:MID:977294933453049956",
+        "MIDDLE":"<:MID:977294933453049956>",
         "BOTTOM":"<:ADC:977294965870829658><:SUPPORT:977294998217318471>"
     }
     lane_emoji = "<:Toto_Bug:1019280617105522729>" if str(last_game_info[0]['lane']) not in LANE_EMJ else LANE_EMJ[last_game_info[0]['lane']]
