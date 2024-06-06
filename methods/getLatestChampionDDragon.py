@@ -1,5 +1,5 @@
 import requests
-from methods.getVersion import get_version
+from .getVersion import get_version
 
 def get_latest_champion_ddragon(champion_json, language="en_US"):
     if language in champion_json:

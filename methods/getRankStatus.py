@@ -13,7 +13,7 @@ def get_rank_status(region, summoner_id, api_key):
     flex_q = [w for w in ranked_stats if w['queueType'] == "RANKED_FLEX_SR"]
    
     ranked = []
-    
+
     if solo_q:
         soloQ = {
             "queueType":"Solo/Duo",
@@ -23,6 +23,7 @@ def get_rank_status(region, summoner_id, api_key):
             "leaguePoints": solo_q[0]['leaguePoints'],
             "wins": solo_q[0]["wins"],
             "losses": solo_q[0]["losses"],
+            "win_ratio": round((100*float(solo_q[0]["wins"])/(float(solo_q[0]["wins"])+float(solo_q[0]["losses"])))),
             "hotStreak":solo_q[0]['hotStreak']
         }
         ranked.append(soloQ)
@@ -35,6 +36,7 @@ def get_rank_status(region, summoner_id, api_key):
             "leaguePoints": flex_q[0]['leaguePoints'],
             "wins": flex_q[0]["wins"],
             "losses": flex_q[0]["losses"],
+            "win_ratio": round((100*float(flex_q[0]["wins"]))/(float(flex_q[0]["wins"])+float(flex_q[0]["losses"]))),
             "hotStreak":flex_q[0]['hotStreak']
         }
         ranked.append(flexQ)

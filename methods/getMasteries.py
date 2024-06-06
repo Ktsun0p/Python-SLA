@@ -1,6 +1,6 @@
 import requests
-from methods.getVersion import get_version
-from methods.getChampByKey import get_champ_by_key
+from .getVersion import get_version
+from .getChampByKey import get_champ_by_key
 
 champion_by_id_cache = {}
 champion_json = {}

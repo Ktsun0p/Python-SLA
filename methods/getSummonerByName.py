@@ -1,12 +1,12 @@
 import requests
 import json
 import os
-from methods.getVersion import get_version
-from methods.getMasteries import get_masteries
-from methods.handleAPIError import handle_api_error
-from methods.getLiveGame import get_live_game
-from methods.getLastGame import get_last_game
-from methods.getRankStatus import get_rank_status
+from .getVersion import get_version
+from .getMasteries import get_masteries
+from .handleAPIError import handle_api_error
+from .getLiveGame import get_live_game
+from .getLastGame import get_last_game
+from .getRankStatus import get_rank_status
 champion_by_id_cache = {}
 champion_json = {}
 
@@ -54,6 +54,6 @@ def get_summoner_by_name(name, tag,region, apiInstance, lang = "en_US"):
        "top_masteries":top_masteries
        }
 
-       return summoner
+       return json.dumps(summoner)
     except Exception as e:
         raise Exception(str(e))

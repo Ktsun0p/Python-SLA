@@ -14,6 +14,6 @@ def handle_api_error(status_code):
     }
 
     if status_code in error_messages:
-        raise Exception(f"{status_code}: {error_messages[status_code]}")
+        raise Exception({"code":status_code,"message":error_messages[status_code]})
     else:
-        raise Exception(f'Unknown error with status code: {status_code}')
+        raise Exception({"code":status_code,"message":f'Unknown error with status code: {status_code}'})

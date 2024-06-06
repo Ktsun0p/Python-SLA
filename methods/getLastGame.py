@@ -1,7 +1,7 @@
 import requests
 import json
-from methods.handleAPIError import handle_api_error
-from methods.getChampByKey import get_champ_by_key
+from .handleAPIError import handle_api_error
+from .getChampByKey import get_champ_by_key
 
 champion_by_id_cache = {}
 champion_json = {}

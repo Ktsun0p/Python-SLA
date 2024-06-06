@@ -1,4 +1,4 @@
-from methods.getSummonerByName import get_summoner_by_name
+from .methods.getSummonerByName import get_summoner_by_name
 
 class riot_api:
     def __init__(self, api_key):

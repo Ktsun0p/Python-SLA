@@ -1,4 +1,4 @@
-from methods.getLatestChampionDDragon import get_latest_champion_ddragon
+from .getLatestChampionDDragon import get_latest_champion_ddragon
 
 def get_champ_by_key(champion_by_id_cache, champion_json, key, language="en_US"):
     if language not in champion_by_id_cache:

@@ -1,6 +1,6 @@
 import requests
 import re
-from methods.getChampByKey import get_champ_by_key
+from .getChampByKey import get_champ_by_key
 
 def get_live_game(champion_by_id_cache, champion_json, region, puuid, api_key):
     live_game = requests.get(f'https://{region}.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/{puuid}?api_key={api_key}').json()
@@ -22,7 +22,7 @@ def get_live_game(champion_by_id_cache, champion_json, region, puuid, api_key):
         'champion':{
             'name':live_game_champ['name'],
             'id': summoner[0]['championId'],
-            'emoji': champ_emojis[str(summoner[0]['championId'])]
+            'emoji': champ_emojis[str(summoner[0]['championId'])]["icon"]
         }
     } 
     return game
