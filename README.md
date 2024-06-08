@@ -39,7 +39,8 @@ api = riot_api(api_key="YOUR_API_KEY")
 
 ```python
 api = riot_api(api_key="API_KEY")
-sumoner1 = api.create_summoner(name="Ktsun0p",tag="Kts0p",region="LA2")
-
-print(json.dumps(sumoner1.getLolProfile(),indent=4))
+sumoner1 = api.create_summoner(name="Ktsun0p",tag="Kts0p",region="LA2").get_lol_profile.by_name()
+summoner2 = api.create_summoner(puuid="PUUID", region="LA2").get_lol_profile.by_puuid()
+print(json.dumps(summoner1,indent=4))
+print(json.dumps(summoner2,indent=4))
 ```
