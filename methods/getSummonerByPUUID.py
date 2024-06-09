@@ -7,14 +7,14 @@ from .handleAPIError import handle_api_error
 from .getLiveGame import get_live_game
 from .getLastGame import get_last_game
 from .getRankStatus import get_rank_status
-from ..main import riot_api
+
 champion_by_id_cache = {}
 champion_json = {}
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 regions_path = os.path.join(current_dir,"../data/regions.json")
 
-def get_summoner_by_puuid(puuid:str,region:str, apiInstance:riot_api, lang:str = "en_US"):
+def get_summoner_by_puuid(puuid:str,region:str, apiInstance, lang:str = "en_US"):
     
     api_key = apiInstance.key
     regions = json.load(open(regions_path))
